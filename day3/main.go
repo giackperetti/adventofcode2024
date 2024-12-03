@@ -21,7 +21,7 @@ func main() {
 	var allMultiplications []struct{ x, y int }
 	var enabledMultiplications []struct{ x, y int }
 
-	mulEnabled := true
+	shouldBeMultiplied := true
 	scanner := bufio.NewScanner(file)
 
 	for scanner.Scan() {
@@ -32,16 +32,16 @@ func main() {
 			fullMatch := match[0]
 
 			if fullMatch == "do()" {
-				mulEnabled = true
+				shouldBeMultiplied = true
 			} else if fullMatch == "don't()" {
-				mulEnabled = false
+				shouldBeMultiplied = false
 			} else {
 				x, _ := strconv.Atoi(match[1])
 				y, _ := strconv.Atoi(match[2])
 
 				allMultiplications = append(allMultiplications, struct{ x, y int }{x, y})
 
-				if mulEnabled {
+				if shouldBeMultiplied {
 					enabledMultiplications = append(enabledMultiplications, struct{ x, y int }{x, y})
 				}
 			}
