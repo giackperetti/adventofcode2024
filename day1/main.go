@@ -67,8 +67,7 @@ func main() {
 	}
 
 	totalDistance = sumList(distances)
-	fmt.Printf("Total Distance: %d\n", totalDistance)
-	// Part 1 Solution: 2285373
+	fmt.Printf("Total Distance(Part 1): %d\n", totalDistance) // Part 1 Solution: 2285373
 
 	for _, num := range col2 {
 		columnSimilarities[num]++
@@ -79,6 +78,5 @@ func main() {
 	}
 
 	totalSimilarityScore = sumList(similarityScores)
-	fmt.Printf("Total Similarity Score: %d\n", totalSimilarityScore)
-	// Part 2 Solution: 21142653
+	fmt.Printf("Total Similarity Score(Part 2): %d\n", totalSimilarityScore) // Part 2 Solution: 21142653
 }

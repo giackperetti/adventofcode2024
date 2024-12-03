@@ -89,6 +89,6 @@ func main() {
 		}
 	}
 
-	fmt.Printf("Number of safe reports: %d\n", safeReportsCount)
-	fmt.Printf("Number of safe reports with dampening: %d\n", safeReportsCount+dampenedSafeReportsCount)
+	fmt.Printf("Number of safe reports(Part 1): %d\n", safeReportsCount) // Part 1 Solution: 220
+	fmt.Printf("Number of safe reports with dampening(Part 2): %d\n", safeReportsCount+dampenedSafeReportsCount) // Part 2 Solution: 296
 }
