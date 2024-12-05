@@ -87,19 +87,19 @@ func correctOrder(sequence []int, orderRules map[int][]int) []int {
 }
 
 func main() {
-	f, err := os.Open("input.txt")
+	file, err := os.Open("input.txt")
 	if err != nil {
 		fmt.Println("Error opening file:", err)
 		return
 	}
-	defer f.Close()
+	defer file.Close()
 
 	printerUpdatesOrder := make(map[int][]int)
 	var printerUpdates [][]int
 	var correctlyOrderedPrinterUpdates [][]int
 	var incorrectlyOrderedPrinterUpdates [][]int
 	var correctedIncorrectlyOrderedPrinterUpdates [][]int
-	scanner := bufio.NewScanner(f)
+	scanner := bufio.NewScanner(file)
 
 	for scanner.Scan() {
 		line := scanner.Text()

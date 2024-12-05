@@ -19,14 +19,14 @@ func sumList(numbers []int) int {
 }
 
 func main() {
-	f, err := os.Open("input.txt")
+	file, err := os.Open("input.txt")
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
-	defer f.Close()
+	defer file.Close()
 
-	scanner := bufio.NewScanner(f)
+	scanner := bufio.NewScanner(file)
 	var col1, col2 []int
 	var distances []int
 	var totalDistance int
