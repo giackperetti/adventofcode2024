@@ -1,2 +1,2 @@
-# adventofcode2024
-Solutions for 2024 Advent Of Code problems
+# Advent of Code 2024
+This repo contains my `Go` solutions to 2024 advent of code problems.
