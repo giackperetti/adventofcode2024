@@ -21,7 +21,7 @@ type Position struct {
 }
 
 type Visit struct {
-	position Position
+	position  Position
 	direction Direction
 }
 
@@ -161,8 +161,8 @@ func main() {
 	if exited {
 		fmt.Println("The guard left the laboratory map.")
 	}
-	fmt.Printf("Number of distinct positions visited by the guard: %d\n", len(visitedPositions))
+	fmt.Printf("Number of distinct positions visited by the guard: %d\n", len(visitedPositions)) // Part 1 Solution: 4758
 
 	loopCount := countPotentialLoops(laboratoryMap, visitedPositions)
-	fmt.Printf("Number of positions where loops can form: %d\n", loopCount)
+	fmt.Printf("Number of positions where loops can form: %d\n", loopCount) // Part 2 Solution: 1670
 }
