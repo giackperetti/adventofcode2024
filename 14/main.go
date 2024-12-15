@@ -49,7 +49,7 @@ func findQuadrant(r Robot, maxVals []int) int {
 func part1(robots []Robot, maxVals []int) int {
 	var updatedRobots []Robot
 
-    quadrantCounts := []int{0, 0, 0, 0, 0}
+	quadrantCounts := []int{0, 0, 0, 0, 0}
 	for i, r := range robots {
 		updatedRobots = append(updatedRobots, simulateMovement(r, 100, maxVals[0], maxVals[1]))
 		quadrantCounts[findQuadrant(updatedRobots[i], maxVals)] += 1
@@ -60,7 +60,7 @@ func part1(robots []Robot, maxVals []int) int {
 		count *= quadrantCounts[i]
 	}
 
-    return count
+	return count
 }
 
 func part2(robots []Robot, maxVals []int) int {
@@ -69,18 +69,18 @@ func part2(robots []Robot, maxVals []int) int {
 	for i := 1; i < 10000; i++ {
 		var updatedRobots []Robot
 
-        quadrantCounts := []int{0, 0, 0, 0, 0}
+		quadrantCounts := []int{0, 0, 0, 0, 0}
 		for j, r := range robots {
 			updatedRobots = append(updatedRobots, simulateMovement(r, i, maxVals[0], maxVals[1]))
 			quadrantCounts[findQuadrant(updatedRobots[j], maxVals)] += 1
 		}
 
-        count := 1
+		count := 1
 		for j := 0; j < 4; j++ {
 			count *= quadrantCounts[j]
 		}
 
-        if count < minSafetyAndTimestep[0] {
+		if count < minSafetyAndTimestep[0] {
 			minSafetyAndTimestep[0] = count
 			minSafetyAndTimestep[1] = i
 		}
@@ -88,7 +88,6 @@ func part2(robots []Robot, maxVals []int) int {
 
 	return minSafetyAndTimestep[1]
 }
-
 
 func main() {
 	file, _ := os.Open("input.txt")
@@ -110,6 +109,6 @@ func main() {
 	part1 := part1(robots, maxGridValues)
 	part2 := part2(robots, maxGridValues)
 
-    fmt.Println("Part 1: ", part1) // Part 1 Solution: 225521010
-    fmt.Println("Part 2: ", part2) // Part 2 Solution: 7774
+	fmt.Println("Part 1: ", part1) // Part 1 Solution: 225521010
+	fmt.Println("Part 2: ", part2) // Part 2 Solution: 7774
 }
